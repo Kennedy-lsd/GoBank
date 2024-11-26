@@ -1,0 +1,7 @@
+CREATE TABLE balances (
+    id SERIAL PRIMARY KEY,
+    amount BIGINT NOT NULL,
+    created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    account_id INT NOT NULL,
+    CONSTRAINT fk_account FOREIGN KEY (account_id) REFERENCES accounts (id) ON DELETE CASCADE
+);
